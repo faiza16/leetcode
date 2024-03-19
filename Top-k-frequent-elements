@@ -10,7 +10,7 @@ class Solution {
         }
         int[] ans = new int[k];
         for(int i = 0; i < k; i++){
-            ans[i] = pq.poll().getKey(); // when poll is called largest entry set from from map will be removed first. This is because of comparator e2.getValue() - e1.getValue()
+            ans[i] = pq.poll().getKey(); // when poll is called largest entry set from queue will be removed first. This is because of comparator e2.getValue() - e1.getValue()
         }
         return ans;
     }
