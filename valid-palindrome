@@ -6,9 +6,9 @@ class Solution {
         while (start <= end) {
             char currStart = s.charAt(start);
             char currEnd = s.charAt(end);
-            if (!Character.isLetterOrDigit(currStart)) {
+            if (!Character.isLetterOrDigit(currStart)) {//moving pointers if digits/specialcharachters found
                 start++;
-            } else if (!Character.isLetterOrDigit(currEnd)) {
+            } else if (!Character.isLetterOrDigit(currEnd)) {//moving pointers if digits/specialcharachters found
                 end--;
             } else {
                 if (Character.toLowerCase(currStart) != Character.toLowerCase(currEnd)) {
