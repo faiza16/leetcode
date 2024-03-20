@@ -1,4 +1,11 @@
-https://leetcode.com/problems/3sum/
+/*Approach for this Problem:
+Define output list to store the final result
+Sort the input array
+Iterate through the array with a variable i, starting from index 0.
+Initialize two pointers, j and k, with j starting at i+1 and k starting at the end of the array.
+In the while loop, check if the sum of nums[i], nums[j], and nums[k] is equal to 0. If it is, insert the triplet into the output list and increment j and decrement k to move the pointers.
+If the sum is less than 0, increment j. If the sum is greater than 0, decrement k.
+Return the output vector*/
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -6,16 +13,16 @@ class Solution {
         for(int i = 0 ; i< nums.length -2 ; i++){
             int j = i+1;
             int k = nums.length -1;
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            if (i > 0 && nums[i] == nums[i - 1]) {//to remove duplicate triplet we will do this
                 continue;
             }
             while(j<k){
                 if(nums[i]+nums[j]+nums[k]==0){
                     ans.add(Arrays.asList(nums[i],nums[j],nums[k]));
-                    while ( j<k && nums[j] == nums[j + 1]) {
+                    while ( j<k && nums[j] == nums[j + 1]) {//to remove duplicate triplet we will do this
                         j++;
                     }
-                    while(j<k && nums[k] == nums[k - 1]) {
+                    while(j<k && nums[k] == nums[k - 1]) {//to remove duplicate triplet we will do this
                         k--;
                     }             
                     j++;
