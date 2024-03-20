@@ -1,0 +1,22 @@
+/*
+https://leetcode.com/problems/group-anagrams/
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+*/
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String,List<String>> map = new HashMap<>();
+        for(int i=0; i< strs.length; i++){
+            //creating a map of strings with key/value pair as sortedWords -> actualWords
+            String word = strs[i];
+            char arr[] = word.toCharArray();
+            Arrays.sort(arr);
+            String sortedStr = new String(arr);
+            if(!map.containsKey(sortedStr)) 
+                map.put(sortedStr,new ArrayList<>());
+            map.get(sortedStr).add(strs[i]);
+            
+        }
+        return new ArrayList(map.values());
+    }
+}
