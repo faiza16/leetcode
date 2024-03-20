@@ -1,12 +1,12 @@
 //https://leetcode.com/problems/3sum/
 /*Approach for this Problem:
-Define output list to store the final result
-Sort the input array
-Iterate through the array with a variable i, starting from index 0.
-Initialize two pointers, j and k, with j starting at i+1 and k starting at the end of the array.
-In the while loop, check if the sum of nums[i], nums[j], and nums[k] is equal to 0. If it is, insert the triplet into the output list and increment j and decrement k to move the pointers.
-If the sum is less than 0, increment j. If the sum is greater than 0, decrement k.
-Return the output vector*/
+1. Define output list to store the final result
+2. Sort the input array
+3. Iterate through the array with a variable i, starting from index 0.
+4. Initialize two pointers, j and k, with j starting at i+1 and k starting at the end of the array.
+5. In the while loop, check if the sum of nums[i], nums[j], and nums[k] is equal to 0. If it is, insert the triplet into the output list and increment j and decrement k to move the pointers.
+6. If the sum is less than 0, increment j. If the sum is greater than 0, decrement k.
+7. Return the output vector*/
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
