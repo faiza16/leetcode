@@ -1,0 +1,32 @@
+//https://leetcode.com/problems/reverse-words-in-a-string/
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder reverseString = new StringBuilder();
+        StringBuilder word= new StringBuilder();
+        List<String> list= new ArrayList<String>();
+        s = s.trim(); //remove all spaces from both ends
+        char[] sArr = s.toCharArray();
+        for(int i=sArr.length-1;i>=0; i--){
+            if(sArr[i] != ' '){
+                word.append(sArr[i]);
+            }
+            else{
+                word = word.reverse();
+                if(!word.toString().trim().equals("")){
+                    list.add(word.toString().trim());//extract each word from last and them to Arraylist
+                    word.setLength(0);
+                }
+            };
+        }
+        word = word.reverse();
+        list.add(word.toString());//adding last word to list
+        
+        for(String str : list){
+            if(str!="")
+                reverseString.append(str).append(' '); // copying from list to String for output
+        }
+        return reverseString.toString().trim();
+        }
+    //TimeComplexity : O(n) because we will iterate through all charachters of string twice. first from original string and then again from list
+    //SpaceComplexity : variable word, list, reverseString are using extra space here. altogether space complexity would be O(n)
+    }
