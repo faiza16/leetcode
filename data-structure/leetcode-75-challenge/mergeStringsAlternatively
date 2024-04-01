@@ -1,1 +1,26 @@
+//https://leetcode.com/problems/merge-strings-alternately
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int totalLength = word1.length() + word2.length();
+        char[] arr1 = word1.toCharArray();
+        char[] arr2 = word2.toCharArray(); 
+        StringBuilder ans = new StringBuilder();
+        int i = 0;
+        int j = 0;
+        for(int k = 0 ; k< totalLength; k++){
+            if(i<word1.length()){
+                ans = ans.append(arr1[i]);
+                i++;
+            }
+            if(j<word2.length()){
+                ans = ans.append(arr2[j]);
+                j++;
+            }
+        }
+        return ans.toString();
+    }
 
+    //Time complexity: Since we traverse both strings once and pick each character alternately, the time complexity of this approach is O(n), where n is the length of the longer string.
+
+    //Space complexity: We use a StringBuilder to store the merged string, so the space complexity of this approach is O(n), where n is the length of the longer string.
+}
