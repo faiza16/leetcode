@@ -1,0 +1,29 @@
+/*https://leetcode.com/problems/is-subsequence
+Example 1:
+Input: s = "abc", t = "ahbgdc"
+Output: true
+
+Example 2:
+Input: s = "axc", t = "ahbgdc"
+Output: false
+*/
+
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        //brute force approach
+        int sIndex=0;
+        int tIndex=0;
+         while (tIndex<t.length() && sIndex<s.length()){
+            if(s.charAt(sIndex) == t.charAt(tIndex)){
+                tIndex++;
+                sIndex++;
+            }
+            else{
+                tIndex++;
+            }
+        }
+        return sIndex == s.length();
+    }
+    //Space Complexity : O(1)
+    //Time Complexity : O(n)
+}
