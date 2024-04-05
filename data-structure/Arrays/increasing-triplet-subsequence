@@ -1,0 +1,22 @@
+//https://leetcode.com/problems/increasing-triplet-subsequence/
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+        int small = Integer.MAX_VALUE; // small is the smallest encountered
+        int mid = Integer.MAX_VALUE; // mid is the second smallest encountered
+        for(int n : nums) {
+            if(n<=small){
+                small = n;//If a value is found that is smaller than or equal to small, update small.
+            }
+            else if (n<=small){
+                mid=n; //If a value is found that is greater than small but smaller than or equal to mid, update mid.
+            }
+            else{//If a value is found that is greater than both small and mid, then we have increasing triplet subsequence
+                return true;
+            }
+
+        }
+        return false;
+    }
+    //Time complexity: O(N)
+    //Space complexity: O(1)
+}
